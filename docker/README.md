@@ -4,7 +4,7 @@
 
 | service         | Image                       | Description                                       |
 | --------------- | --------------------------- | ------------------------------------------------- |
-| **client**      | from `../Dockerfile`        | readest frontend                                  |
+| **client**      | from `../Dockerfile`        | uberread frontend                                 |
 | **db**          | `supabase/postgres`         | psql db with supabase extensions                  |
 | **kong**        | `kong:2.8.1`                | api gateway routing requests to supabase services |
 | **auth**        | `supabase/gotrue:v2.185.0`  | auth service (email, JWT)                         |
@@ -16,7 +16,7 @@
 
 | Port   | Service          |
 | ------ | ---------------- |
-| `3000` | readest          |
+| `3000` | uberread         |
 | `7000` | kong API gateway |
 | `9000` | MinIO S3 API     |
 | `9001` | MinIO console UI |
@@ -53,7 +53,7 @@ the client image is built locally on first run. subsequent starts reuse the cach
 
 ### 3. Access
 
-- Readest app: `http://localhost:3000`
+- UberRead app: `http://localhost:3000`
 - MinIO console: `http://localhost:9001` (login with `MINIO_ROOT_USER` / `MINIO_ROOT_PASSWORD`)
 
 ### Hot Reload (development)
@@ -64,9 +64,9 @@ to develop using the compose stack, set the build target on `client` to `develop
 volumes:
   - ../:/app
   - /app/node_modules
-  - /app/apps/readest-app/node_modules
-  - /app/apps/readest-app/public/vendor
-  - /app/apps/readest-app/.next
+  - /app/apps/uberread-app/node_modules
+  - /app/apps/uberread-app/public/vendor
+  - /app/apps/uberread-app/.next
   - /app/packages/foliate-js/node_modules
 ```
 
@@ -102,7 +102,7 @@ docker build \
   --build-arg NEXT_PUBLIC_OBJECT_STORAGE_TYPE=s3 \
   --build-arg NEXT_PUBLIC_STORAGE_FIXED_QUOTA=1073741824 \
   --build-arg NEXT_PUBLIC_TRANSLATION_FIXED_QUOTA=50000 \
-  -t readest-client \
+  -t uberread-client \
   .
 ```
 
@@ -115,8 +115,8 @@ docker run -p 3000:3000 \
   -e SUPABASE_ADMIN_KEY=<service-role-key> \
   -e S3_ENDPOINT=http://localhost:9000 \
   -e S3_REGION=us-east-1 \
-  -e S3_BUCKET_NAME=readest-files \
+  -e S3_BUCKET_NAME=uberread-files \
   -e S3_ACCESS_KEY_ID=<minio-user> \
   -e S3_SECRET_ACCESS_KEY=<minio-password> \
-  readest-client
+  uberread-client
 ```

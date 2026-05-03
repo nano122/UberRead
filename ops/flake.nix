@@ -1,5 +1,5 @@
 {
-  description = "Readest development environment";
+  description = "UberRead development environment";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
@@ -152,16 +152,16 @@
 
         devShells = {
           web = mkCommonShell {
-            name = "readest-dev";
+            name = "uberread-dev";
           };
 
           ios = mkCommonShell {
-            name = "readest-ios";
+            name = "uberread-ios";
             extraPackages = [ pkgs.cocoapods ];
           };
 
           android = mkCommonShell {
-            name = "readest-android";
+            name = "uberread-android";
             extraPackages = [
               pkgs.android-sdk
               pkgs.gradle

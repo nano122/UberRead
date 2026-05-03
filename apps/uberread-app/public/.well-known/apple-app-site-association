@@ -1,0 +1,25 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": [
+          "J5W48D69VR.com.bilingify.uberread"
+        ],
+        "components": [
+          {
+            "/": "/auth/*",
+            "comment": "Matches OAuth callback paths"
+          },
+          {
+            "/": "/o/*",
+            "comment": "Matches annotation deeplinks"
+          },
+          {
+            "/": "/s/*",
+            "comment": "Matches book share links"
+          }
+        ]
+      }
+    ]
+  }
+}

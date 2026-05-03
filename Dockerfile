@@ -5,17 +5,17 @@ RUN corepack enable
 RUN corepack prepare pnpm@10.29.3 --activate
 WORKDIR /app
 COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
-COPY apps/readest-app/package.json ./apps/readest-app/
+COPY apps/uberread-app/package.json ./apps/uberread-app/
 COPY patches/ ./patches/
 COPY packages/ ./packages/
 
 FROM base AS dependencies
 RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --frozen-lockfile
-RUN pnpm --filter @readest/readest-app setup-vendors
+RUN pnpm --filter @uberread/uberread-app setup-vendors
 
 FROM dependencies AS development-stage
 COPY . .
-WORKDIR /app/apps/readest-app
+WORKDIR /app/apps/uberread-app
 EXPOSE 3000
 ENTRYPOINT ["pnpm", "dev-web", "-H", "0.0.0.0"]
 
@@ -28,11 +28,11 @@ ARG NEXT_PUBLIC_OBJECT_STORAGE_TYPE
 ARG NEXT_PUBLIC_STORAGE_FIXED_QUOTA
 ARG NEXT_PUBLIC_TRANSLATION_FIXED_QUOTA
 COPY --from=dependencies /app/node_modules /app/node_modules
-COPY --from=dependencies /app/apps/readest-app/node_modules /app/apps/readest-app/node_modules
-COPY --from=dependencies /app/apps/readest-app/public/vendor /app/apps/readest-app/public/vendor
+COPY --from=dependencies /app/apps/uberread-app/node_modules /app/apps/uberread-app/node_modules
+COPY --from=dependencies /app/apps/uberread-app/public/vendor /app/apps/uberread-app/public/vendor
 COPY --from=dependencies /app/packages/foliate-js/node_modules /app/packages/foliate-js/node_modules
 COPY . .
-WORKDIR /app/apps/readest-app
+WORKDIR /app/apps/uberread-app
 RUN pnpm build-web
 
 FROM build as production-stage

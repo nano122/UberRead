@@ -10,11 +10,11 @@
 [submodule "packages/simplecc-wasm"]
 	path = packages/simplecc-wasm
 	url = https://github.com/readest/simplecc-wasm.git
-[submodule "apps/readest-app/src-tauri/plugins/tauri-plugin-turso"]
-	path = apps/readest-app/src-tauri/plugins/tauri-plugin-turso
+[submodule "apps/uberread-app/src-tauri/plugins/tauri-plugin-turso"]
+	path = apps/uberread-app/src-tauri/plugins/tauri-plugin-turso
 	url = https://github.com/readest/tauri-plugin-turso.git
-[submodule "apps/readest-app/.claude/skills/gstack"]
-	path = apps/readest-app/.claude/skills/gstack
+[submodule "apps/uberread-app/.claude/skills/gstack"]
+	path = apps/uberread-app/.claude/skills/gstack
 	url = https://github.com/garrytan/gstack.git
 [submodule "packages/qcms"]
 	path = packages/qcms

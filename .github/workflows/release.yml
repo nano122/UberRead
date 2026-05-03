@@ -1,4 +1,4 @@
-name: Release Readest
+name: Release UberRead
 
 on:
   workflow_dispatch:
@@ -21,7 +21,7 @@ jobs:
       - name: setup node
         uses: actions/setup-node@v6
       - name: get version
-        run: echo "PACKAGE_VERSION=$(node -p "require('./apps/readest-app/package.json').version")" >> $GITHUB_ENV
+        run: echo "PACKAGE_VERSION=$(node -p "require('./apps/uberread-app/package.json').version")" >> $GITHUB_ENV
       - name: get release
         id: get-release
         uses: actions/github-script@v9
@@ -39,8 +39,8 @@ jobs:
         with:
           script: |
             const fs = require('fs');
-            const version = require('./apps/readest-app/package.json').version;
-            const releaseNotesFileContent = fs.readFileSync('./apps/readest-app/release-notes.json', 'utf8');
+            const version = require('./apps/uberread-app/package.json').version;
+            const releaseNotesFileContent = fs.readFileSync('./apps/uberread-app/release-notes.json', 'utf8');
             const releaseNotes = JSON.parse(releaseNotesFileContent).releases[version] || {};
             const notes = releaseNotes.notes || [];
             const releaseNote = notes.map((note, index) => `${index + 1}. ${note}`).join(' ');
@@ -94,12 +94,12 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           version=${{ needs.get-release.outputs.release_version }}
-          plugin_zip="Readest-${version}-1.koplugin.zip"
-          meta_file="apps/readest.koplugin/_meta.lua"
+          plugin_zip="UberRead-${version}-1.koplugin.zip"
+          meta_file="apps/uberread.koplugin/_meta.lua"
           perl -i -pe "s/^}/    version = \"${version}\",\n}/" "${meta_file}"
 
           cd apps
-          zip -r ../${plugin_zip} readest.koplugin
+          zip -r ../${plugin_zip} uberread.koplugin
           cd ..
 
           echo "Uploading ${plugin_zip} to GitHub release"
@@ -176,7 +176,7 @@ jobs:
         run: pnpm install
 
       - name: copy pdfjs-dist and simplecc-dist to public directory
-        run: pnpm --filter @readest/readest-app setup-vendors
+        run: pnpm --filter @uberread/uberread-app setup-vendors
 
       - name: install Rust stable
         uses: dtolnay/rust-toolchain@stable
@@ -212,7 +212,7 @@ jobs:
           echo "NEXT_PUBLIC_SUPABASE_URL=${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}" >> .env.local
           echo "NEXT_PUBLIC_SUPABASE_ANON_KEY=${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}" >> .env.local
           echo "NEXT_PUBLIC_APP_PLATFORM=tauri" >> .env.local
-          cp .env.local apps/readest-app/.env.local
+          cp .env.local apps/uberread-app/.env.local
 
       - name: build and upload Android apks
         if: matrix.config.release == 'android'
@@ -222,10 +222,10 @@ jobs:
           TAURI_PRIVATE_KEY: ${{ secrets.TAURI_SIGNING_PRIVATE_KEY }}
           TAURI_PRIVATE_KEY_PASSWORD: ${{ secrets.TAURI_SIGNING_PRIVATE_KEY_PASSWORD }}
         run: |
-          cd apps/readest-app/
+          cd apps/uberread-app/
           rm -rf src-tauri/gen/android
           pnpm tauri android init
-          pnpm tauri icon ../../data/icons/readest-book.png
+          pnpm tauri icon ../../data/icons/uberread-book.png
           git checkout .
 
           pushd src-tauri/gen/android
@@ -237,8 +237,8 @@ jobs:
           popd
           version=${{ needs.get-release.outputs.release_version }}
           apk_path=src-tauri/gen/android/app/build/outputs/apk/universal/release
-          universial_apk=Readest_${version}_universal.apk
-          arm64_apk=Readest_${version}_arm64.apk
+          universial_apk=UberRead_${version}_universal.apk
+          arm64_apk=UberRead_${version}_arm64.apk
           pnpm tauri android build
           cp ${apk_path}/app-universal-release.apk $universial_apk
           pnpm tauri android build -t aarch64
@@ -259,15 +259,15 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          cd apps/readest-app/
-          curl -sL https://github.com/readest/readest/releases/latest/download/latest.json -o latest.json
+          cd apps/uberread-app/
+          curl -sL https://github.com/uberread/uberread/releases/latest/download/latest.json -o latest.json
 
           version=${{ needs.get-release.outputs.release_version }}
-          universial_apk_url="https://github.com/readest/readest/releases/download/${{ needs.get-release.outputs.release_tag }}/Readest_${version}_universal.apk"
-          arm64_apk_url="https://github.com/readest/readest/releases/download/${{ needs.get-release.outputs.release_tag }}/Readest_${version}_arm64.apk"
+          universial_apk_url="https://github.com/uberread/uberread/releases/download/${{ needs.get-release.outputs.release_tag }}/UberRead_${version}_universal.apk"
+          arm64_apk_url="https://github.com/uberread/uberread/releases/download/${{ needs.get-release.outputs.release_tag }}/UberRead_${version}_arm64.apk"
 
-          universial_sig=$(cat Readest_${version}_universal.apk.sig)
-          arm64_sig=$(cat Readest_${version}_arm64.apk.sig)
+          universial_sig=$(cat UberRead_${version}_universal.apk.sig)
+          arm64_sig=$(cat UberRead_${version}_arm64.apk.sig)
 
           jq --arg url "$universial_apk_url" \
               --arg sig "$universial_sig" \
@@ -299,7 +299,7 @@ jobs:
           APPLE_TEAM_ID: ${{ secrets.APPLE_TEAM_ID }}
           NODE_OPTIONS: '--max-old-space-size=8192'
         with:
-          projectPath: apps/readest-app
+          projectPath: apps/uberread-app
           releaseId: ${{ needs.get-release.outputs.release_id }}
           releaseBody: ${{ needs.get-release.outputs.release_note }}
           args: ${{ matrix.config.args || '' }}
@@ -309,7 +309,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           echo "Uploading release notes to GitHub release"
-          gh release upload ${{ needs.get-release.outputs.release_tag }} apps/readest-app/release-notes.json --clobber
+          gh release upload ${{ needs.get-release.outputs.release_tag }} apps/uberread-app/release-notes.json --clobber
 
       - name: build and upload portable binaries (Windows only)
         if: matrix.config.os == 'windows-latest'
@@ -322,7 +322,7 @@ jobs:
         shell: bash
         run: |
           echo "Building Portable Binaries"
-          pushd apps/readest-app/
+          pushd apps/uberread-app/
           echo "NEXT_PUBLIC_PORTABLE_APP=true" >> .env.local
           pnpm tauri build ${{ matrix.config.args }}
 
@@ -332,15 +332,15 @@ jobs:
           version=${{ needs.get-release.outputs.release_version }}
 
           if [ "$arch" = "x86_64" ]; then
-            bin_file="Readest_${version}_x64-portable.exe"
+            bin_file="UberRead_${version}_x64-portable.exe"
           elif [ "$arch" = "aarch64" ]; then
-            bin_file="Readest_${version}_arm64-portable.exe"
+            bin_file="UberRead_${version}_arm64-portable.exe"
           else
             echo "Unknown architecture: $arch"
             exit 1
           fi
 
-          exe_file="target/${{ matrix.config.rust_target }}/release/readest.exe"
+          exe_file="target/${{ matrix.config.rust_target }}/release/uberread.exe"
           # Browsers on Windows won't download zip files that contain exe files
           # so upload the exe files instead. This is totally stupid.
           # powershell.exe -Command "Compress-Archive -Path $exe_file -DestinationPath $bin_file -Force"
@@ -350,7 +350,7 @@ jobs:
           gh release upload ${{ needs.get-release.outputs.release_tag }} $bin_file --clobber
 
           echo "Signing portable binary"
-          pushd apps/readest-app/
+          pushd apps/uberread-app/
           pnpm tauri signer sign "../../$bin_file"
           popd
           echo "Uploading signature to GitHub release"
@@ -362,23 +362,23 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         shell: bash
         run: |
-          curl -sL https://github.com/readest/readest/releases/latest/download/latest.json -o latest.json
+          curl -sL https://github.com/uberread/uberread/releases/latest/download/latest.json -o latest.json
 
           version=${{ needs.get-release.outputs.release_version }}
           arch=${{ matrix.config.arch }}
 
           if [ "$arch" = "x86_64" ]; then
-            bin_file="Readest_${version}_x64-portable.exe"
+            bin_file="UberRead_${version}_x64-portable.exe"
             platform_key="windows-x86_64-portable"
           elif [ "$arch" = "aarch64" ]; then
-            bin_file="Readest_${version}_arm64-portable.exe"
+            bin_file="UberRead_${version}_arm64-portable.exe"
             platform_key="windows-aarch64-portable"
           else
             echo "Unknown architecture: $arch"
             exit 1
           fi
 
-          portable_url="https://github.com/readest/readest/releases/download/${{ needs.get-release.outputs.release_tag }}/$bin_file"
+          portable_url="https://github.com/uberread/uberread/releases/download/${{ needs.get-release.outputs.release_tag }}/$bin_file"
           portable_sig=$(cat $bin_file.sig)
 
           jq --arg url "$portable_url" \

@@ -1,14 +1,16 @@
 <div align="center">
-  <a href="https://readest.com?utm_source=github&utm_medium=referral&utm_campaign=readme" target="_blank">
-    <img src="https://github.com/readest/readest/blob/main/apps/readest-app/src-tauri/icons/icon.png?raw=true" alt="Readest Logo" width="20%" />
+  <a href="https://uberread.com?utm_source=github&utm_medium=referral&utm_campaign=readme" target="_blank">
+    <img src="https://github.com/uberread/uberread/blob/main/apps/uberread-app/src-tauri/icons/icon.png?raw=true" alt="UberRead Logo" width="20%" />
   </a>
-  <h1>Readest</h1>
+  <h1>UberRead</h1>
   <br>
 
-[Readest][link-website] is an open-source ebook reader designed for immersive and deep reading experiences. Built as a modern rewrite of [Foliate](https://github.com/johnfactotum/foliate), it leverages [Next.js 16](https://github.com/vercel/next.js) and [Tauri v2](https://github.com/tauri-apps/tauri) to deliver a smooth, cross-platform experience across macOS, Windows, Linux, Android, iOS, and the Web.
+[UberRead][link-website] is an open-source ebook reader designed for immersive and deep reading experiences. Built as a modern rewrite of [Foliate](https://github.com/johnfactotum/foliate), it leverages [Next.js 16](https://github.com/vercel/next.js) and [Tauri v2](https://github.com/tauri-apps/tauri) to deliver a smooth, cross-platform experience across macOS, Windows, Linux, Android, iOS, and the Web.
+
+UberRead is a fork and rebrand of [Readest](https://github.com/readest/readest). The original Readest project attribution is preserved in [NOTICE](NOTICE), and this project remains under the GNU Affero General Public License.
 
 [![Website][badge-website]][link-website]
-[![Web App][badge-web-app]][link-web-readest]
+[![Web App][badge-web-app]][link-web-uberread]
 [![OS][badge-platforms]][link-website]
 <br>
 [![Discord][badge-discord]][link-discord]
@@ -36,8 +38,8 @@
 </p>
 
 <div align="center">
-  <a href="https://readest.com" target="_blank">
-    <img src="./data/screenshots/landing_all_platforms.png" alt="Readest Banner" width="100%" />
+  <a href="https://uberread.com" target="_blank">
+    <img src="./data/screenshots/landing_all_platforms.png" alt="UberRead Banner" width="100%" />
   </a>
 </div>
 
@@ -55,7 +57,7 @@
 | **[Parallel Read][link-parallel-read]**    | Read two books or documents simultaneously in a split-screen view.                                                     | ✅         |
 | **Customize Font and Layout**              | Adjust font, layout, theme mode, and theme colors for a personalized experience.                                       | ✅         |
 | **Code Syntax Highlighting**               | Read software manuals with rich coloring of code examples.                                                             | ✅         |
-| **File Association and Open With**         | Quickly open files in Readest in your file browser with one-click.                                                     | ✅         |
+| **File Association and Open With**         | Quickly open files in UberRead in your file browser with one-click.                                                    | ✅         |
 | **Library Management**                     | Organize, sort, and manage your entire ebook library.                                                                  | ✅         |
 | **OPDS/Calibre Integration**               | Integrate OPDS/Calibre to access online libraries and catalogs.                                                        | ✅         |
 | **Translate with DeepL and Yandex**        | From a single sentence to the entire book—translate instantly.                                                         | ✅         |
@@ -103,23 +105,23 @@ Stay tuned for continuous improvements and updates! Contributions and suggestion
 <div align="center">
   <a href="https://apps.apple.com/app/id6738622779">
     <img alt="Download on the App Store" src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" style="height: 50px;" /></a>&nbsp;&nbsp;&nbsp;&nbsp;
-  <a href="https://play.google.com/store/apps/details?id=com.bilingify.readest">
+  <a href="https://play.google.com/store/apps/details?id=com.bilingify.uberread">
     <img alt="Get it on Google Play" src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" style="height: 50px;" /></a>
 </div>
 
 ### Platform-Specific Downloads
 
-- macOS / iOS / iPadOS : Search and install **Readest** on the [App Store][link-appstore], _also_ available on TestFlight for beta test (send your Apple ID to <readestapp@gmail.com> to request access).
-- Windows / Linux / Android: Visit and download **Readest** at [https://readest.com][link-website] or the [Releases on GitHub][link-gh-releases].
-- Linux users can also install [Readest on Flathub][link-flathub].
-- Web: Visit and use **Readest for Web** at [https://web.readest.com][link-web-readest].
+- macOS / iOS / iPadOS : Search and install **UberRead** on the [App Store][link-appstore], _also_ available on TestFlight for beta test (send your Apple ID to <uberreadapp@gmail.com> to request access).
+- Windows / Linux / Android: Visit and download **UberRead** at [https://uberread.com][link-website] or the [Releases on GitHub][link-gh-releases].
+- Linux users can also install [UberRead on Flathub][link-flathub].
+- Web: Visit and use **UberRead for Web** at [https://web.uberread.com][link-web-uberread].
 
 ## Requirements
 
 - **Node.js** and **pnpm** for Next.js development
 - **Rust** and **Cargo** for Tauri development
 
-For the best experience to build Readest for yourself, use a recent version of Node.js and Rust. Refer to the [Tauri documentation](https://v2.tauri.app/start/prerequisites/) for details on setting up the development environment prerequisites on different platforms.
+For the best experience to build UberRead for yourself, use a recent version of Node.js and Rust. Refer to the [Tauri documentation](https://v2.tauri.app/start/prerequisites/) for details on setting up the development environment prerequisites on different platforms.
 
 ```bash
 nvm install v24
@@ -130,13 +132,13 @@ rustup update
 
 ## Getting Started
 
-To get started with Readest, follow these steps to clone and build the project.
+To get started with UberRead, follow these steps to clone and build the project.
 
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/readest/readest.git
-cd readest
+git clone https://github.com/uberread/uberread.git
+cd uberread
 ```
 
 ### 2. Install Dependencies
@@ -146,7 +148,7 @@ cd readest
 git submodule update --init --recursive
 pnpm install
 # copy vendors dist libs to public directory
-pnpm --filter @readest/readest-app setup-vendors
+pnpm --filter @uberread/uberread-app setup-vendors
 ```
 
 ### 3. Verify Dependencies Installation
@@ -176,10 +178,10 @@ For Android:
 
 ```bash
 # Initialize the Android environment (run once)
-rm apps/readest-app/src-tauri/gen/android
+rm apps/uberread-app/src-tauri/gen/android
 pnpm tauri android init
-pnpm tauri icon ../../data/icons/readest-book.png
-git checkout apps/readest-app/src-tauri/gen/android
+pnpm tauri icon ../../data/icons/uberread-book.png
+git checkout apps/uberread-app/src-tauri/gen/android
 
 pnpm tauri android dev
 # or if you want to dev on a real device
@@ -191,7 +193,7 @@ For iOS:
 ```bash
 # Set up the iOS environment (run once)
 pnpm tauri ios init
-pnpm tauri icon ../../data/icons/readest-book.png
+pnpm tauri icon ../../data/icons/uberread-book.png
 
 pnpm tauri ios dev
 # or if you want to dev on a real device
@@ -207,7 +209,7 @@ pnpm tauri ios build
 ```
 
 Please refer to our release script if you experience any issues:
-https://github.com/readest/readest/blob/main/.github/workflows/release.yml
+https://github.com/uberread/uberread/blob/main/.github/workflows/release.yml
 
 ### 6. Setup dev environment with Nix
 
@@ -226,16 +228,16 @@ Please check the [wiki][link-gh-wiki] of this project for more information on de
 
 ## Troubleshooting
 
-### 1. Readest Won’t Launch on Windows (Missing Edge WebView2 Runtime)
+### 1. UberRead Won’t Launch on Windows (Missing Edge WebView2 Runtime)
 
 **Symptom**
 
-- When you double-click readest.exe, nothing happens. No window appears, and Task Manager does not show the process.
+- When you double-click uberread.exe, nothing happens. No window appears, and Task Manager does not show the process.
 - This can affect both the standard installer and the portable version.
 
 **Cause**
 
-- Microsoft Edge WebView2 Runtime is either missing, outdated, or improperly installed on your system. Readest depends on WebView2 to render the interface on Windows.
+- Microsoft Edge WebView2 Runtime is either missing, outdated, or improperly installed on your system. UberRead depends on WebView2 to render the interface on Windows.
 
 **How to Fix**
 
@@ -244,8 +246,8 @@ Please check the [wiki][link-gh-wiki] of this project for more information on de
 2. Install or Update WebView2
    - Download the WebView2 Runtime directly from Microsoft: [link](https://developer.microsoft.com/en-us/microsoft-edge/webview2?form=MA13LH).
    - If you prefer an offline installer, download the offline package and run it as an Administrator.
-3. Re-run Readest
-   - After installing/updating WebView2, launch readest.exe again.
+3. Re-run UberRead
+   - After installing/updating WebView2, launch uberread.exe again.
    - If you still encounter problems, reboot your PC and try again.
 
 **Additional Tips**
@@ -255,11 +257,11 @@ Please check the [wiki][link-gh-wiki] of this project for more information on de
 
 **Still Stuck?**
 
-- See Issue [readest/readest#358](https://github.com/readest/readest/issues/358) for further details, or head over to our [Discord][link-discord] server and open a support discussion with detailed logs of your environment and the steps you’ve taken.
+- See Issue [uberread/uberread#358](https://github.com/uberread/uberread/issues/358) for further details, or head over to our [Discord][link-discord] server and open a support discussion with detailed logs of your environment and the steps you’ve taken.
 
 ### 2. AppImage Launches but Only Shows a Taskbar Icon
 
-On some Arch Linux systems—especially those using Wayland—the Readest AppImage may briefly show an icon in the taskbar and then exit without opening a window.
+On some Arch Linux systems—especially those using Wayland—the UberRead AppImage may briefly show an icon in the taskbar and then exit without opening a window.
 
 You might see logs such as:
 
@@ -274,7 +276,7 @@ This behavior is usually caused by compatibility issues between the bundled AppI
 You can preload the system Wayland client library before launching the AppImage:
 
 ```
-LD_PRELOAD=/usr/lib/libwayland-client.so /path/to/Readest.AppImage
+LD_PRELOAD=/usr/lib/libwayland-client.so /path/to/UberRead.AppImage
 ```
 
 This workaround has been confirmed to resolve the issue on affected systems.
@@ -285,29 +287,33 @@ If you prefer a more reliable out-of-the-box experience on Arch Linux, consider 
 
 ## Contributors
 
-Readest is open-source, and contributions are welcome! Feel free to open issues, suggest features, or submit pull requests. Please **review our [contributing guidelines](CONTRIBUTING.md) before you start**. We also welcome you to join our [Discord][link-discord] community for either support or contributing guidance.
+UberRead is open-source, and contributions are welcome! Feel free to open issues, suggest features, or submit pull requests. Please **review our [contributing guidelines](CONTRIBUTING.md) before you start**. We also welcome you to join our [Discord][link-discord] community for either support or contributing guidance.
 
-<a href="https://github.com/readest/readest/graphs/contributors">
+<a href="https://github.com/uberread/uberread/graphs/contributors">
   <p align="left">
-    <img width="500" src="https://contrib.rocks/image?repo=readest/readest" alt="A table of avatars from the project's contributors" />
+    <img width="500" src="https://contrib.rocks/image?repo=uberread/uberread" alt="A table of avatars from the project's contributors" />
   </p>
 </a>
 
 ## Support
 
-If Readest has been useful to you, consider supporting its development. You can [become a sponsor on GitHub](https://github.com/sponsors/readest), [donate via Stripe](https://donate.stripe.com/4gMcN5aZdcE52kW3TFgjC01), or [donate with crypto](https://donate.readest.com). Your contribution helps us squash bugs faster, improve performance, and keep building great features.
+If UberRead has been useful to you, consider supporting its development. You can [become a sponsor on GitHub](https://github.com/sponsors/uberread), [donate via Stripe](https://donate.stripe.com/4gMcN5aZdcE52kW3TFgjC01), or [donate with crypto](https://donate.uberread.com). Your contribution helps us squash bugs faster, improve performance, and keep building great features.
 
 ### Sponsors
 
 <p align="center">
-  <a title="Browser testing via TestMu AI" href="https://www.testmuai.com/?utm_medium=sponsor&utm_source=readest" target="_blank">
-    <img src="https://raw.githubusercontent.com/readest/readest/refs/heads/main/data/sponsors/testmu-ai-logo.png" style="vertical-align: middle;" width="250" />
+  <a title="Browser testing via TestMu AI" href="https://www.testmuai.com/?utm_medium=sponsor&utm_source=uberread" target="_blank">
+    <img src="https://raw.githubusercontent.com/uberread/uberread/refs/heads/main/data/sponsors/testmu-ai-logo.png" style="vertical-align: middle;" width="250" />
   </a>
 </p>
 
 ## License
 
-Readest is free software: you can redistribute it and/or modify it under the terms of the [GNU Affero General Public License](https://www.gnu.org/licenses/agpl-3.0.html) as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version. See the [LICENSE](LICENSE) file for details.
+UberRead is free software: you can redistribute it and/or modify it under the terms of the [GNU Affero General Public License](https://www.gnu.org/licenses/agpl-3.0.html) as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version. See the [LICENSE](LICENSE) file for details.
+
+This license allows forking, modification, renaming, redistribution, and commercial use, including charging for copies or services. It also imposes strong copyleft obligations: if you distribute modified versions or make a modified version available to users over a network, you must provide the corresponding source code under the AGPL. Closed-source distribution or closed-source hosted use is therefore not permitted unless you obtain separate permission from the relevant copyright holders.
+
+UberRead is based on the upstream Readest project. See [NOTICE](NOTICE) for preserved upstream attribution.
 
 The following libraries and frameworks are used in this software:
 
@@ -330,35 +336,35 @@ We would also like to thank the [Web Chinese Fonts Plan](https://chinese-font.ne
 
 ---
 
-<div align="center" style="color: gray;">Happy reading with Readest!</div>
+<div align="center" style="color: gray;">Happy reading with UberRead!</div>
 
-[badge-website]: https://img.shields.io/badge/website-readest.com-orange
-[badge-web-app]: https://img.shields.io/badge/read%20online-web.readest.com-orange
-[badge-license]: https://img.shields.io/github/license/readest/readest?color=teal
-[badge-release]: https://img.shields.io/github/release/readest/readest?color=green
+[badge-website]: https://img.shields.io/badge/website-uberread.com-orange
+[badge-web-app]: https://img.shields.io/badge/read%20online-web.uberread.com-orange
+[badge-license]: https://img.shields.io/github/license/uberread/uberread?color=teal
+[badge-release]: https://img.shields.io/github/release/uberread/uberread?color=green
 [badge-platforms]: https://img.shields.io/badge/platforms-macOS%2C%20Windows%2C%20Linux%2C%20Android%2C%20iOS%2C%20Web%2C%20PWA-green
-[badge-last-commit]: https://img.shields.io/github/last-commit/readest/readest?color=blue
-[badge-commit-activity]: https://img.shields.io/github/commit-activity/m/readest/readest?color=blue
+[badge-last-commit]: https://img.shields.io/github/last-commit/uberread/uberread?color=blue
+[badge-commit-activity]: https://img.shields.io/github/commit-activity/m/uberread/uberread?color=blue
 [badge-discord]: https://img.shields.io/discord/1314226120886976544?color=5865F2&label=discord&labelColor=black&logo=discord&logoColor=white&style=flat-square
 [badge-hellogithub]: https://abroad.hellogithub.com/v1/widgets/recommend.svg?rid=8a5b6ade2aee461a8bd94e59200682a7&claim_uid=eRLUbPOy2qZtDgw&theme=small
-[badge-donate]: https://donate.readest.com/badge.svg
+[badge-donate]: https://donate.uberread.com/badge.svg
 [badge-deepwiki]: https://deepwiki.com/badge.svg
-[badge-reddit]: https://img.shields.io/reddit/subreddit-subscribers/readest?style=flat&logo=reddit&color=F37E41
+[badge-reddit]: https://img.shields.io/reddit/subreddit-subscribers/uberread?style=flat&logo=reddit&color=F37E41
 [badge-language-coverage]: https://img.shields.io/badge/coverage-53%25%20population%20🌍-green
-[link-donate]: https://donate.readest.com/?tickers=btc%2Ceth%2Csol%2Cusdc
+[link-donate]: https://donate.uberread.com/?tickers=btc%2Ceth%2Csol%2Cusdc
 [link-appstore]: https://apps.apple.com/app/apple-store/id6738622779?pt=127463130&ct=github&mt=8
-[link-website]: https://readest.com?utm_source=github&utm_medium=referral&utm_campaign=readme
-[link-flathub]: https://flathub.org/en/apps/com.bilingify.readest
-[link-web-readest]: https://web.readest.com
-[link-gh-releases]: https://github.com/readest/readest/releases
-[link-gh-commits]: https://github.com/readest/readest/commits/main
-[link-gh-pulse]: https://github.com/readest/readest/pulse
-[link-gh-wiki]: https://github.com/readest/readest/wiki
+[link-website]: https://uberread.com?utm_source=github&utm_medium=referral&utm_campaign=readme
+[link-flathub]: https://flathub.org/en/apps/com.bilingify.uberread
+[link-web-uberread]: https://web.uberread.com
+[link-gh-releases]: https://github.com/uberread/uberread/releases
+[link-gh-commits]: https://github.com/uberread/uberread/commits/main
+[link-gh-pulse]: https://github.com/uberread/uberread/pulse
+[link-gh-wiki]: https://github.com/uberread/uberread/wiki
 [link-discord]: https://discord.gg/gntyVNk3BJ
-[link-parallel-read]: https://readest.com/#parallel-read
+[link-parallel-read]: https://uberread.com/#parallel-read
 [link-koreader]: https://github.com/koreader/koreader
 [link-hellogithub]: https://hellogithub.com/repository/8a5b6ade2aee461a8bd94e59200682a7
-[link-deepwiki]: https://deepwiki.com/readest/readest
-[link-locales]: https://github.com/readest/readest/tree/main/apps/readest-app/public/locales
-[link-kosync-wiki]: https://github.com/readest/readest/wiki/Sync-with-Koreader-devices
-[link-reddit]: https://reddit.com/r/readest/
+[link-deepwiki]: https://deepwiki.com/uberread/uberread
+[link-locales]: https://github.com/uberread/uberread/tree/main/apps/uberread-app/public/locales
+[link-kosync-wiki]: https://github.com/uberread/uberread/wiki/Sync-with-Koreader-devices
+[link-reddit]: https://reddit.com/r/uberread/

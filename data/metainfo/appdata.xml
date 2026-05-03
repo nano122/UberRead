@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component type="desktop-application">
-  <id>com.bilingify.readest</id>
+  <id>com.bilingify.uberread</id>
 
-  <name>Readest</name>
+  <name>UberRead</name>
   <summary>Modern, feature-rich ebook reader</summary>
 
   <description>
-    <p>Readest is a modern, feature-rich ebook reader designed for avid readers offering seamless cross-platform access, powerful tools, and an intuitive interface to elevate your reading experience.</p>
-    <p>Built as a modern rewrite of Foliate, Readest leverages Next.js 15 and Tauri v2 to deliver a smooth, cross-platform experience across macOS, Windows, Linux, Android, iOS, and the Web.</p>
-    <p>Whether you're analyzing complex texts, immersing yourself in stories, or exploring new ideas, Readest adapts to your needs with powerful features for deep, thoughtful reading.</p>
+    <p>UberRead is a modern, feature-rich ebook reader designed for avid readers offering seamless cross-platform access, powerful tools, and an intuitive interface to elevate your reading experience.</p>
+    <p>Built as a modern rewrite of Foliate, UberRead leverages Next.js 15 and Tauri v2 to deliver a smooth, cross-platform experience across macOS, Windows, Linux, Android, iOS, and the Web.</p>
+    <p>Whether you're analyzing complex texts, immersing yourself in stories, or exploring new ideas, UberRead adapts to your needs with powerful features for deep, thoughtful reading.</p>
     <p>Key features include:</p>
     <ul>
       <li>Multi-format support for EPUB, MOBI, KF8 (AZW3), FB2, CBZ, TXT, and PDF (experimental).</li>
@@ -23,9 +23,9 @@
       <li>Cross-platform synchronization of book files, reading progress, notes, and bookmarks across all supported platforms.</li>
       <li>Text-to-Speech functionality for a more accessible reading experience.</li>
       <li>Organize, sort, and manage your entire ebook library with advanced library management tools.</li>
-      <li>One-click file association to quickly open files in Readest from your file browser.</li>
+      <li>One-click file association to quickly open files in UberRead from your file browser.</li>
     </ul>
-    <p>Readest also includes custom CSS support for personalized styling, and code syntax highlighting for technical books. The application is designed to honor the legacy of deep reading while embracing modern technology for an enhanced experience.</p>
+    <p>UberRead also includes custom CSS support for personalized styling, and code syntax highlighting for technical books. The application is designed to honor the legacy of deep reading while embracing modern technology for an enhanced experience.</p>
   </description>
 
   <categories>
@@ -35,7 +35,7 @@
   </categories>
 
   <keywords>
-    <keyword translate="no">readest</keyword>
+    <keyword translate="no">uberread</keyword>
     <keyword>ebook</keyword>
     <keyword>reader</keyword>
     <keyword>epub</keyword>
@@ -51,13 +51,13 @@
     <keyword>sync</keyword>
   </keywords>
 
-  <url type="homepage">https://github.com/readest/readest</url>
-  <url type="bugtracker">https://github.com/readest/readest/issues</url>
-  <url type="help">https://github.com/readest/readest/wiki</url>
-  <url type="donation">https://github.com/sponsors/readest</url>
-  <url type="vcs-browser">https://github.com/readest/readest</url>
+  <url type="homepage">https://github.com/uberread/uberread</url>
+  <url type="bugtracker">https://github.com/uberread/uberread/issues</url>
+  <url type="help">https://github.com/uberread/uberread/wiki</url>
+  <url type="donation">https://github.com/sponsors/uberread</url>
+  <url type="vcs-browser">https://github.com/uberread/uberread</url>
 
-  <launchable type="desktop-id">com.bilingify.readest.desktop</launchable>
+  <launchable type="desktop-id">com.bilingify.uberread.desktop</launchable>
 
   <releases>
     <release version="0.10.6" date="2026-04-13">
@@ -113,7 +113,7 @@
           <li>Reading: Added current time and battery display in footer</li>
           <li>Reading: Added TTS, annotation support, pinch-to-zoom, and scroll mode for PDFs</li>
           <li>Library: Added backup/restore to a zip file and batch metadata refresh</li>
-          <li>KOReader: Added bookmark and annotation sync between KOReader and Readest devices</li>
+          <li>KOReader: Added bookmark and annotation sync between KOReader and UberRead devices</li>
           <li>Footnotes: Added back navigation with link history and more responsive popup sizing</li>
           <li>Annotations: Added loupe display when selecting text in instant annotation mode</li>
           <li>Text-to-Speech: Fixed TTS reading position tracking in scrolled mode</li>
@@ -229,8 +229,8 @@
           <li>Sync: Improved file downloading by correctly handling special characters in filenames</li>
           <li>UI: Added an option to temporarily dismiss the reading progress bar</li>
           <li>Settings: Screen brightness adjustments now apply only to the reader view</li>
-          <li>iOS: You can now open files directly in Readest from the Files app</li>
-          <li>macOS: Added a global menu option to open files with Readest</li>
+          <li>iOS: You can now open files directly in UberRead from the Files app</li>
+          <li>macOS: Added a global menu option to open files with UberRead</li>
         </ul>
       </description>
     </release>
@@ -239,26 +239,26 @@
   <metadata_license>FSFAP</metadata_license>
   <project_license>AGPL-3.0-or-later</project_license>
 
-  <developer id="com.readest">
-    <name>Readest Team</name>
+  <developer id="com.uberread">
+    <name>UberRead Team</name>
   </developer>
 
   <screenshots>
     <screenshot type="default">
-      <caption>Readest main interface with annotation</caption>
-      <image type="source">https://raw.githubusercontent.com/readest/readest/refs/heads/main/data/screenshots/annotations.png</image>
+      <caption>UberRead main interface with annotation</caption>
+      <image type="source">https://raw.githubusercontent.com/uberread/uberread/refs/heads/main/data/screenshots/annotations.png</image>
     </screenshot>
     <screenshot>
       <caption>Reading interface with dark mode</caption>
-      <image type="source">https://raw.githubusercontent.com/readest/readest/refs/heads/main/data/screenshots/dark_mode.png</image>
+      <image type="source">https://raw.githubusercontent.com/uberread/uberread/refs/heads/main/data/screenshots/dark_mode.png</image>
     </screenshot>
     <screenshot>
       <caption>Reading with TTS speak out</caption>
-      <image type="source">https://raw.githubusercontent.com/readest/readest/refs/heads/main/data/screenshots/tts_speak_aloud.png</image>
+      <image type="source">https://raw.githubusercontent.com/uberread/uberread/refs/heads/main/data/screenshots/tts_speak_aloud.png</image>
     </screenshot>
     <screenshot>
       <caption>Reading tools with Wikipedia integration</caption>
-      <image type="source">https://raw.githubusercontent.com/readest/readest/refs/heads/main/data/screenshots/wikipedia_vertical.png</image>
+      <image type="source">https://raw.githubusercontent.com/uberread/uberread/refs/heads/main/data/screenshots/wikipedia_vertical.png</image>
     </screenshot>
   </screenshots>
 

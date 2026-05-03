@@ -64,7 +64,7 @@ importers:
         specifier: ^5
         version: 5.9.3
 
-  apps/readest-app:
+  apps/uberread-app:
     dependencies:
       '@ai-sdk/react':
         specifier: ^3.0.49

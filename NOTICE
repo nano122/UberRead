@@ -1,0 +1,19 @@
+UberRead is a fork and modified version of Readest.
+
+Upstream project: Readest
+Upstream repository: https://github.com/readest/readest
+Original project author metadata: Bilingify LLC
+Original contributors: Readest contributors
+
+This fork has been rebranded as UberRead and may include additional
+modifications. The upstream copyright and attribution notices are
+preserved by this NOTICE file, the Git history, and the AGPL license
+terms in LICENSE.
+
+UberRead remains licensed under the GNU Affero General Public License,
+version 3 or later, unless a file states otherwise. Commercial use,
+forking, modification, and redistribution are allowed under the AGPL,
+but distribution or public network use of modified versions carries
+source-code disclosure obligations. Closed-source distribution or
+closed-source hosted use is not permitted by the AGPL without separate
+permission from the relevant copyright holders.

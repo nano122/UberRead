@@ -4,7 +4,7 @@
 
 ### Overview
 
-Readest is a cross-platform e-reader (macOS, Windows, Linux, Android, iOS, Web) built on Next.js and Tauri. It processes user-supplied ebook files, syncs data to the cloud, integrates with external services (OPDS catalogs, KOReader, DeepL, Yandex), and handles user authentication.
+UberRead is a cross-platform e-reader (macOS, Windows, Linux, Android, iOS, Web) built on Next.js and Tauri. It processes user-supplied ebook files, syncs data to the cloud, integrates with external services (OPDS catalogs, KOReader, DeepL, Yandex), and handles user authentication.
 
 ### Assets
 
@@ -60,13 +60,13 @@ Readest is a cross-platform e-reader (macOS, Windows, Linux, Android, iOS, Web) 
 
 ### Out of Scope
 
-- Vulnerabilities in user's operating system or browser outside of Readest's control
+- Vulnerabilities in user's operating system or browser outside of UberRead's control
 - Physical access attacks to a user's device
 - Issues in third-party services (DeepL, Yandex, Calibre) themselves
 
 ## Supported Versions
 
-Readest does not currently maintain separate release channels. Security updates are provided only for the latest release series.
+UberRead does not currently maintain separate release channels. Security updates are provided only for the latest release series.
 
 | Version | Supported          |
 | ------- | ------------------ |
@@ -80,7 +80,7 @@ issue or discussion for security-sensitive reports.
 
 Use GitHub's private vulnerability reporting for this repository:
 
-<https://github.com/readest/readest/security/advisories/new>
+<https://github.com/uberread/uberread/security/advisories/new>
 
 When submitting a report, include:
 

@@ -23,12 +23,12 @@ gen
 packages
 
 # Claude Code Skills & Config
-apps/readest-app/.claude
+apps/uberread-app/.claude
 
 # Vendored Assets (Generated/External Code)
-apps/readest-app/public/*.js
-apps/readest-app/public/vendor
-apps/readest-app/src-tauri/plugins/tauri-plugin-turso
+apps/uberread-app/public/*.js
+apps/uberread-app/public/vendor
+apps/uberread-app/src-tauri/plugins/tauri-plugin-turso
 
 # Environment & Editor
 .env

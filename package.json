@@ -1,15 +1,15 @@
 {
-  "name": "@readest/monorepo",
+  "name": "@uberread/monorepo",
   "private": true,
-  "repository": "readest/readest",
+  "repository": "uberread/uberread",
   "scripts": {
-    "test": "pnpm --filter @readest/readest-app test",
-    "lint": "pnpm --filter @readest/readest-app lint",
-    "tauri": "pnpm --filter @readest/readest-app tauri",
-    "dev-web": "pnpm --filter @readest/readest-app dev-web",
+    "test": "pnpm --filter @uberread/uberread-app test",
+    "lint": "pnpm --filter @uberread/uberread-app lint",
+    "tauri": "pnpm --filter @uberread/uberread-app tauri",
+    "dev-web": "pnpm --filter @uberread/uberread-app dev-web",
     "prepare": "husky",
-    "fmt:check": "pnpm --filter @readest/readest-app fmt:check",
-    "clippy:check": "pnpm --filter @readest/readest-app clippy:check",
+    "fmt:check": "pnpm --filter @uberread/uberread-app fmt:check",
+    "clippy:check": "pnpm --filter @uberread/uberread-app clippy:check",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,css,json,md,html,yml}\"",
     "format:check": "prettier --check \"**/*.{js,jsx,ts,tsx,css,json,md,html,yml}\""
   },
